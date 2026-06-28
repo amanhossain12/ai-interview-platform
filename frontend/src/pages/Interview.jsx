@@ -185,19 +185,18 @@ function Interview() {
     );
 
     const response = await fetch(
-      "http://localhost:8080/api/evaluate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          question: questions[currentQuestion],
-          answer: transcript,
-        }),
-      }
-    );
-
+  "https://ai-interview-platform-l487.onrender.com/api/evaluate",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      question: questions[currentQuestion],
+      answer: transcript,
+    }),
+  }
+);
     const data = await response.json();
 
 console.log("Full Response:", data);
