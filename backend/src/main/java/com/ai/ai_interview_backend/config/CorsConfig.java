@@ -17,9 +17,9 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
 
                 registry.addMapping("/**")
-                        .allowedOrigins(
+                        .allowedOriginPatterns(
                                 "http://localhost:5173",
-                                "https://ai-interview-platform-jade-nine.vercel.app"
+                                "https://*.vercel.app"
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*");
