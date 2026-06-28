@@ -19,14 +19,25 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    // Test API
+    @GetMapping("/test")
+    public String test() {
+        return "Backend Updated - 2026";
+    }
+
+    // Signup API
     @PostMapping("/signup")
     public String signup(@RequestBody User user) {
+
         userRepository.save(user);
+
         return "Signup Success";
     }
 
+    // Login API
     @PostMapping("/login")
     public String login(@RequestBody User user) {
+
         User existingUser = userRepository.findByEmailAndPassword(
                 user.getEmail(),
                 user.getPassword()
