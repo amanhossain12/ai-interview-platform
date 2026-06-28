@@ -7,24 +7,26 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(
+        originPatterns = {
+                "https://*.vercel.app",
+                "http://localhost:5173"
+        },
+        allowCredentials = "true"
+)
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-    // Signup API
     @PostMapping("/signup")
     public String signup(@RequestBody User user) {
-
         userRepository.save(user);
-
         return "Signup Success";
     }
 
-    // Login API
     @PostMapping("/login")
     public String login(@RequestBody User user) {
-
         User existingUser = userRepository.findByEmailAndPassword(
                 user.getEmail(),
                 user.getPassword()
