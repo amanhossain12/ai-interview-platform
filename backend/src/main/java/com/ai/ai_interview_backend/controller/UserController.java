@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
     @Autowired
@@ -26,11 +25,10 @@ public class UserController {
     @PostMapping("/login")
     public String login(@RequestBody User user) {
 
-        User existingUser =
-                userRepository.findByEmailAndPassword(
-                        user.getEmail(),
-                        user.getPassword()
-                );
+        User existingUser = userRepository.findByEmailAndPassword(
+                user.getEmail(),
+                user.getPassword()
+        );
 
         if (existingUser != null) {
             return "Login Success";
