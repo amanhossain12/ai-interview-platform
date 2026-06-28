@@ -20,10 +20,6 @@ public class UserController {
     private UserRepository userRepository;
 
     // Test API
-    @GetMapping("/test")
-    public String test() {
-        return "Backend Updated - 2026";
-    }
 
     // Signup API
     @PostMapping("/signup")
