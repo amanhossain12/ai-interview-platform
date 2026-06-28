@@ -9,43 +9,40 @@ function Login() {
     e.preventDefault();
 
     try {
-  const response = await fetch(
-    "https://ai-interview-platform-l487.onrender.com/api/login",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
+      const response = await fetch(
+        "https://ai-interview-platform-l487.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
+
+      const result = await response.text();
+
+      if (result === "Login Success") {
+        alert("Login Success");
+        window.location.href = "/dashboard";
+      } else {
+        alert("Invalid Credentials");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server Error");
     }
-  );
+  };
 
-  const result = await response.text();
-
-  if (result === "Login Success") {
-    alert("Login Success");
-
-    // Dashboard page e redirect
-    window.location.href = "/dashboard";
-  } else {
-    alert("Invalid Credentials");
-  }
-
-} catch (error) {
-  console.error(error);
-  alert("Server Error");
-}
   return (
     <>
       <Navbar />
 
       <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6 py-12">
-
         <div className="w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
-
           <h2 className="text-4xl font-bold text-center mb-3">
             Login
           </h2>
@@ -55,7 +52,6 @@ function Login() {
           </p>
 
           <form onSubmit={handleLogin}>
-
             <input
               type="email"
               placeholder="Email Address"
@@ -78,14 +74,11 @@ function Login() {
             >
               Login
             </button>
-
           </form>
-
         </div>
-
       </div>
     </>
   );
 }
-}
+
 export default Login;
