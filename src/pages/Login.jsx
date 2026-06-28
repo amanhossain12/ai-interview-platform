@@ -9,37 +9,35 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://localhost:8080/api/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
-      );
-
-      const result = await response.text();
-
-      if (result === "Login Success") {
-        alert("Login Success");
-
-        // Dashboard page e redirect
-        window.location.href = "/dashboard";
-      } else {
-        alert("Invalid Credentials");
-      }
-
-    } catch (error) {
-      console.error(error);
-      alert("Server Error");
+  const response = await fetch(
+    "https://ai-interview-platform-l487.onrender.com/api/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
     }
-  };
+  );
 
+  const result = await response.text();
+
+  if (result === "Login Success") {
+    alert("Login Success");
+
+    // Dashboard page e redirect
+    window.location.href = "/dashboard";
+  } else {
+    alert("Invalid Credentials");
+  }
+
+} catch (error) {
+  console.error(error);
+  alert("Server Error");
+}
   return (
     <>
       <Navbar />
@@ -89,5 +87,5 @@ function Login() {
     </>
   );
 }
-
+}
 export default Login;
