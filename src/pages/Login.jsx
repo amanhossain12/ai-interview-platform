@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "https://ai-interview-platform-l487.onrender.com/api/login",
+        `${API_BASE_URL}/api/signup`,
         {
           method: "POST",
           headers: {

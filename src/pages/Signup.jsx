@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -10,7 +11,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://ai-interview-platform-l487.onrender.com/api/signup", {
+      const response = await fetch(`${API_BASE_URL}/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,6 +24,7 @@ function Signup() {
       });
 
       const result = await response.text();
+
       alert(result);
 
       setName("");
@@ -39,9 +41,7 @@ function Signup() {
       <Navbar />
 
       <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6 py-12">
-
         <div className="w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
-
           <h2 className="text-4xl font-bold text-center mb-3">
             Create Account
           </h2>
@@ -51,7 +51,6 @@ function Signup() {
           </p>
 
           <form onSubmit={handleSubmit}>
-
             <input
               type="text"
               placeholder="Full Name"
@@ -82,11 +81,8 @@ function Signup() {
             >
               Signup
             </button>
-
           </form>
-
         </div>
-
       </div>
     </>
   );

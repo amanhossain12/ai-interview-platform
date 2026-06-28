@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { speakWithElevenLabs } from "../utils/elevenlabs";
+import { API_BASE_URL } from "../config";
 
 function Interview() {
   const videoRef = useRef(null);
@@ -185,7 +186,7 @@ function Interview() {
     );
 
     const response = await fetch(
-  "https://ai-interview-platform-l487.onrender.com/api/evaluate",
+  `${API_BASE_URL}/api/evaluate`,
   {
     method: "POST",
     headers: {

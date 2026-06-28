@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 
 function ResumeUpload() {
 
@@ -24,13 +25,10 @@ function ResumeUpload() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch(
-        "https://ai-interview-platform-l487.onrender.com/api/resume/upload",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+     const response = await fetch(`${API_BASE_URL}/api/evaluate`, {
+  method: "POST",
+  body: formData,
+});
 
       if (!response.ok) {
         throw new Error(await response.text());
