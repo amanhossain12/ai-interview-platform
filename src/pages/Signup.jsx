@@ -10,7 +10,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://ai-interview-platform-l487.onrender.com/api/evaluate", {
+      const response = await fetch("https://ai-interview-platform-l487.onrender.com/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
