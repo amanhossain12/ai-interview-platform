@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 
 function Signup() {
   const [name, setName] = useState("");
