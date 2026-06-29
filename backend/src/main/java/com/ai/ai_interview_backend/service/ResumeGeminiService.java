@@ -26,32 +26,44 @@ public class ResumeGeminiService {
 
         try {
 
-            String prompt = """
-                    You are an ATS Resume Analyzer.
+    System.out.println("=========== GEMINI DEBUG ===========");
+    System.out.println("API Key Loaded: " + (apiKey != null));
+    System.out.println("API Key Empty: " + apiKey.isBlank());
 
-                    Analyze the following resume.
+    if (apiKey != null && apiKey.length() > 6) {
+        System.out.println("API Key Prefix: " + apiKey.substring(0, 6));
+    }
 
-                    Return ONLY valid JSON.
+    System.out.println("====================================");
 
-                    {
-                      "atsScore": 0,
-                      "skills": [],
-                      "missingSkills": [],
-                      "questions": [],
-                      "feedback": ""
-                    }
+    String prompt = """
+            You are an ATS Resume Analyzer.
 
-                    Rules:
-                    1. ATS Score should be between 0-100.
-                    2. Extract technical skills.
-                    3. Mention missing skills.
-                    4. Generate exactly 10 interview questions based on the resume.
-                    5. Give detailed feedback.
+            Analyze the following resume.
 
-                    Resume:
+            Return ONLY valid JSON.
 
-                    %s
-                    """.formatted(resumeText);
+            {
+              "atsScore": 0,
+              "skills": [],
+              "missingSkills": [],
+              "questions": [],
+              "feedback": ""
+            }
+
+            Rules:
+            1. ATS Score should be between 0-100.
+            2. Extract technical skills.
+            3. Mention missing skills.
+            4. Generate exactly 10 interview questions based on the resume.
+            5. Give detailed feedback.
+
+            Resume:
+
+            %s
+            """.formatted(resumeText);
+
+    
 
             String requestBody = """
                     {
@@ -69,9 +81,9 @@ public class ResumeGeminiService {
 
             String response = webClient.post()
                     .uri(
-                            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
-                                    + apiKey
-                    )
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key="
+    + apiKey
+)
                     .contentType(MediaType.APPLICATION_JSON)
                     .bodyValue(requestBody)
                     .retrieve()
