@@ -25,7 +25,7 @@ function ResumeUpload() {
       formData.append("file", file);
 
       const response = await fetch(
-        "https://ai-interview-platform-l487.onrender.com/api/resume/upload",
+        `${API_BASE_URL}/api/resume/upload`,
         {
           method: "POST",
           body: formData,

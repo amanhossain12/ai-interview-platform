@@ -185,7 +185,7 @@ function Interview() {
     );
 
     const response = await fetch(
-  "https://ai-interview-platform-l487.onrender.com/api/evaluate",
+  `${API_BASE_URL}/api/...`,
   {
     method: "POST",
     headers: {

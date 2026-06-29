@@ -10,7 +10,7 @@ function Login() {
 
     try {
   const response = await fetch(
-    "https://ai-interview-platform-l487.onrender.com/api/login",
+    `${API_BASE_URL}/api/...`,
     {
       method: "POST",
       headers: {
