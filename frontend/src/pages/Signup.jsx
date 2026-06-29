@@ -11,7 +11,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/...`, {
+      const response = await fetch(`${API_BASE_URL}/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

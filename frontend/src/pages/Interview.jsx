@@ -186,7 +186,7 @@ function Interview() {
     );
 
     const response = await fetch(
-  `${API_BASE_URL}/api/...`,
+  `${API_BASE_URL}/api/evaluate`,
   {
     method: "POST",
     headers: {
