@@ -80,21 +80,21 @@ public class ResumeGeminiService {
                     """.formatted(prompt.replace("\"", "\\\""));
 
             String response = webClient.post()
-                    .uri(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key="
-    + apiKey
-)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .bodyValue(requestBody)
-                    .retrieve()
-                    .onStatus(
-                            status -> status.isError(),
-                            clientResponse -> clientResponse
-                                    .bodyToMono(String.class)
-                                    .map(body -> new RuntimeException(body))
-                    )
-                    .bodyToMono(String.class)
-                    .block();
+        .uri(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
+                        + apiKey
+        )
+        .contentType(MediaType.APPLICATION_JSON)
+        .bodyValue(requestBody)
+        .retrieve()
+        .onStatus(
+                status -> status.isError(),
+                clientResponse -> clientResponse
+                        .bodyToMono(String.class)
+                        .map(body -> new RuntimeException(body))
+        )
+        .bodyToMono(String.class)
+        .block();
 
             System.out.println("============= GEMINI RESPONSE =============");
             System.out.println(response);

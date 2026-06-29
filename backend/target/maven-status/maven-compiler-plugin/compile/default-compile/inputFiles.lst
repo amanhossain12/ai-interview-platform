@@ -1,0 +1,12 @@
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/AiInterviewBackendApplication.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/config/CorsConfig.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/controller/EvaluateController.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/controller/ResumeController.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/controller/UserController.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/dto/EvaluateRequest.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/dto/EvaluateResponse.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/dto/ResumeAnalysisResponse.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/entity/User.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/repository/UserRepository.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/service/GeminiService.java
+/Users/aman/Desktop/ai-interview-platform-clone/ai-interview-platform/backend/src/main/java/com/ai/ai_interview_backend/service/ResumeGeminiService.java
